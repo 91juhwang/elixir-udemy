@@ -1,6 +1,6 @@
 # Cards
 
-**TODO: Add description**
+**TODO: To learn about the basis of functional programming and the basic Elixir code structure**
 
 ## Installation
 
@@ -14,6 +14,11 @@ def deps do
   ]
 end
 ```
+
+## Notes
+
+* `iex -S mix` inside the directory where mix.exs is there to compile and run iex
+
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
