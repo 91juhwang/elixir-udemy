@@ -2,25 +2,28 @@
 
 **TODO: To learn about the basis of functional programming and the basic Elixir code structure**
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `cards` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:cards, "~> 0.1.0"}
-  ]
-end
-```
-
 ## Notes
+
+[Udemy Tutorial](https://www.udemy.com/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/learn/v4/overview)
 
 * `iex -S mix` inside the directory where mix.exs is there to compile and run iex
 
+## Pattern Matching
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/cards](https://hexdocs.pm/cards).
+* Pattern Matching is Elixir's way for assigning a variable.
 
+* If the data structure and the no of left/right side's elements are same, then the pattern **matches** and assigns the variable.
+
+Ex.)
+```ruby
+# returns ["red"]
+color1 = ["red"]
+
+[color1] = ["red"]
+
+return color1 #returns red
+
+[color1, color2] = ["red", "blue"]
+return color1 #returns "red"
+return color2 #returns "blue"
+```

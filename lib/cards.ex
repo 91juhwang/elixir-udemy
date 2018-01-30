@@ -28,4 +28,20 @@ defmodule Cards do
   def deal(deck, no_of_hands) do
     Enum.split(deck, no_of_hands)
   end
+
+  def save(deck, file_name) do
+    binary = :erlang.term_to_binary(deck)
+    File.write(file_name, binary)
+  end
+
+  def load(file_name) do
+    {status, binary} = File.read file_name
+    # By convention, Elixir avoid using if/else
+    case status do
+      :ok ->
+        :erlang.binary_to_term binary
+      :error ->
+        "That file does not exist."
+    end
+  end
 end
