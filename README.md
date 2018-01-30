@@ -8,6 +8,10 @@
 
 * `iex -S mix` inside the directory where mix.exs is there to compile and run iex
 
+* Update `defp deps` block to update dependencies just like Gemfile
+
+* Run `mix deps.get` to install the dependecies
+
 ## Pattern Matching
 
 * Pattern Matching is Elixir's way for assigning a variable.
@@ -27,3 +31,28 @@ return color1 #returns red
 return color1 #returns "red"
 return color2 #returns "blue"
 ```
+
+Ex.2)
+
+`["red", color] = ["red", "blue"]` -> In this case, left hard coded value must match in the right side as well.
+
+## Atoms
+
+`:some_word` is the primitive data type of Elixir. Something like symbols in Ruby.
+
+
+## Pipe Operator
+
+Chain method using `|>`
+
+With the pipe operator, there is no need to save a variable.
+method after `|>` will use the returned result from the method before.
+
+## ExDoc
+
+two version of a documentation.
+
+### Module Documentation
+
+
+### Function Documentation
