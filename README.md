@@ -53,6 +53,46 @@ method after `|>` will use the returned result from the method before.
 two version of a documentation.
 
 ### Module Documentation
+on top of the codes inside the module.
 
+```ruby
+  @moduledoc """
+    Provides methods for creating and handling deck of cards
+  """
+```
+
+run mix docs: Generates `docs/index.html`
 
 ### Function Documentation
+on top of each functions
+
+```ruby
+  @doc """
+    Check if a card is inside the created deck
+
+    ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> Cards.contains?(deck, "Ace of Spades")
+      true
+
+  """
+```
+run mix docs: Generates `docs/index.html`
+
+## Testing
+
+doctest `Module` will include the function documentations' examples.
+
+Example test codes:
+```ruby
+  test "create_deck makes 20 cards" do
+    deck_length = length(Cards.create_deck)
+    assert deck_length == 20
+  end
+
+  test "Shuffling a deck randomizes" do
+    deck = Cards.create_deck
+    refute Cards.shuffle(deck) == Cards.create_deck
+  end
+```
