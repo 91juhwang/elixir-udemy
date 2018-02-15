@@ -151,6 +151,20 @@ colors # returns # returns %{primary: "red", secondary_color: "green"}
 ```ruby
 colors = [{:primary, "red"}, {:secondary, "green"}]
 colors[:primary] # returns "red"
-colors = [pr]
+colors = [primary: "red", secondary: "green"] # returns samething
+%{primary: "red", primary: "blue"} # returns blue and not duplicate keys
 ```
-Keyword list stores the duplicate keys, but tuples can only store unique keys
+Keyword list stores the duplicate keys unlike Map.
+
+Keyword List is useful when using something like `ecto`. Because it can store multiple duplicate keys
+
+When using Keyword List, when the last argument of a function is a Keyword List, `[]` can be removed.
+ex.
+
+```ruby
+# This passes the keyword list as an argument to find_where function
+# However, since it's the last argument of the function [] was removed,
+# and since duplicate key of 'where' is used, it is a keyword list
+query = User.find_where where: user.age > 10, where: user.subscribed == true
+```
+
