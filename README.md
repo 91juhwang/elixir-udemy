@@ -96,3 +96,61 @@ Example test codes:
     refute Cards.shuffle(deck) == Cards.create_deck
   end
 ```
+
+## Two types of Data Structure in Elixir
+
+### maps
+
+Maps are collections of key and values. Just like `hashes`!!
+
+```ruby
+iex> colors = %{primary: "red", secondary: "blue"}
+# returns %{primary: "red"}
+iex> colors.primary
+
+# Use with pattern matching
+iex> %{secondary: secondary_color}  = colors
+# returns blue
+iex> secondary_color
+```
+
+#### Updating a map structure is confusing!!!!
+
+```ruby
+colors = %{primary: "red"}
+
+# returns an error
+colors.primary = "blue"
+```
+
+In order to update the map, we can do it in 2 ways.
+
+1. With the function
+2. With the special syntax
+
+Elixir provides rudimentary functions for manipulating the map.
+`put` function:
+
+```ruby
+colors # returns %{primary: "red"}
+colors_two = Map.put(colors, :primary, "blue")
+colors_two.primary # returns blue
+colors # Still returns %{primary: "red"}
+
+# Using syntax to update original map
+colors_three = %{ colors | primary: "green" }
+colors_three.primary # returns green
+
+# adding new key:value to the map
+Map.put(colors, secondary_color: "green")
+colors # returns # returns %{primary: "red", secondary_color: "green"}
+```
+
+## Keyword Lists
+
+```ruby
+colors = [{:primary, "red"}, {:secondary, "green"}]
+colors[:primary] # returns "red"
+colors = [pr]
+```
+Keyword list stores the duplicate keys, but tuples can only store unique keys
