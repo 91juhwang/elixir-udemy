@@ -2,6 +2,8 @@
 
 **TODO: To learn about the basis of functional programming and the basic Elixir code structure**
 
+## Check IDENTICON PROJECT BELOW (Elixir project)
+
 ## Notes
 
 [Udemy Tutorial](https://www.udemy.com/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/learn/v4/overview)
@@ -168,3 +170,26 @@ ex.
 query = User.find_where where: user.age > 10, where: user.subscribed == true
 ```
 
+# Identicon
+
+## Summary
+
+Write a module that generates identicon(auto-generated pixel image), which will return images based on the string inputs.
+
+Identicon requires 5 x 5 grid, 250px x 250px with each square being 50px. Colors will be automatically filled and will always be identical or symmetric about the center.
+
+## Requirements
+
+* Elixir
+
+Check identicon directory in the repository.
+
+## Algorithm
+
+1. String input
+2. Compute MD5 hash of string
+3. List of numbers based on the string
+4. Pick color
+5. Build grid squares
+6. Convert grid into image
+7. Save image as a file
